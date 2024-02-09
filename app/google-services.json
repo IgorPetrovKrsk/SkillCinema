@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "866987066056",
+    "project_id": "skillcinema-b914c",
+    "storage_bucket": "skillcinema-b914c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866987066056:android:530e765328672860e45bfd",
+        "android_client_info": {
+          "package_name": "igor.petrov.final_android_lvl1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnDTlMK7WwGGJTBVbYkY5EWng7xV8fS1I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

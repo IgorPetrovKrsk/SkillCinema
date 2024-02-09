@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_fragmentWelcome1"
+            app:destination="@id/fragmentWelcome1" />
+        <action
+            android:id="@+id/action_navigation_home_to_fragmentWelcomeLoading"
+            app:destination="@id/fragmentWelcomeLoading" />
+        <action
+            android:id="@+id/action_navigation_home_to_fragmentShowAll"
+            app:destination="@id/fragmentShowAll"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.search.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_search_to_searchSettingsFragment"
+            app:destination="@id/searchSettingsFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_user"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.user.UserFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user"/>
+    <fragment
+        android:id="@+id/fragmentWelcome1"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.welcome.FragmentWelcome1"
+        android:label="fragment_welcome1"
+        tools:layout="@layout/fragment_welcome1" >
+        <action
+            android:id="@+id/action_fragmentWelcome1_to_fragmentWelcome2"
+            app:destination="@id/fragmentWelcome2"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_fragmentWelcome1_to_fragmentWelcomeLoading"
+            app:destination="@id/fragmentWelcomeLoading"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentWelcome2"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.welcome.FragmentWelcome2"
+        android:label="FragmentWelcome2" >
+        <action
+            android:id="@+id/action_fragmentWelcome2_to_fragmentWelcome3"
+            app:destination="@id/fragmentWelcome3"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_fragmentWelcome2_to_fragmentWelcomeLoading"
+            app:destination="@id/fragmentWelcomeLoading"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentWelcome3"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.welcome.FragmentWelcome3"
+        android:label="FragmentWelcome3" >
+        <action
+            android:id="@+id/action_fragmentWelcome3_to_fragmentWelcomeLoading"
+            app:destination="@id/fragmentWelcomeLoading"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentWelcomeLoading"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.welcome.FragmentWelcomeLoading"
+        android:label="FragmentWelcomeLoading" >
+        <action
+            android:id="@+id/action_fragmentWelcomeLoading_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:enterAnim="@anim/enter_alpha"
+            app:exitAnim="@anim/exit_to_down"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentShowAll"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.showAll.FragmentShowAll"
+        tools:layout="@layout/fragment_show_all">
+        <argument
+            android:name="filter"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="label"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="All" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentFilm"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.film.FilmFragment"
+        android:label="fragment_film"
+        tools:layout="@layout/fragment_film" >
+        <argument
+            android:name="kinopoiskId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_fragmentFilm_to_bottomFilmCollectionsFragment2"
+            app:destination="@id/bottomFilmCollectionsFragment" />
+        <action
+            android:id="@+id/action_fragmentFilm_to_bottomFilmCollectionsFragment"
+            app:destination="@id/bottomFilmCollectionsFragment"
+            app:enterAnim="@anim/slide_out_bottom"
+            app:exitAnim="@anim/slide_in_bottom"
+            app:popEnterAnim="@anim/slide_out_bottom"
+            app:popExitAnim="@anim/slide_in_bottom" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentPerson"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.person.FragmentPerson"
+        android:label="fragment_person">
+        <argument
+            android:name="personId"
+            app:argType="integer" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_fragmentFilm"
+        app:destination="@id/fragmentFilm"
+        app:enterAnim="@anim/enter_alpha"
+        app:exitAnim="@anim/exit_alpha"
+        app:popEnterAnim="@anim/enter_alpha"
+        app:popExitAnim="@anim/exit_alpha" />
+    <action
+        android:id="@+id/action_global_fragmentPerson"
+        app:destination="@id/fragmentPerson"
+        app:enterAnim="@anim/enter_alpha"
+        app:exitAnim="@anim/exit_alpha"
+        app:popEnterAnim="@anim/enter_alpha"
+        app:popExitAnim="@anim/exit_alpha" />
+    <action
+        android:id="@+id/action_global_fragmentShowAll"
+        app:destination="@id/fragmentShowAll"
+        app:enterAnim="@anim/enter_alpha"
+        app:exitAnim="@anim/exit_alpha"
+        app:popEnterAnim="@anim/enter_alpha"
+        app:popExitAnim="@anim/exit_alpha" />
+    <fragment
+        android:id="@+id/fragmentSerial"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.serial.FragmentSerial"
+        android:label="fragment_serial_seasons"
+        tools:layout="@layout/fragment_serial_seasons" >
+        <argument
+            android:name="serialId"
+            app:argType="integer" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_fragmentSerial"
+        app:destination="@id/fragmentSerial"
+        app:enterAnim="@anim/enter_alpha"
+        app:exitAnim="@anim/exit_alpha"
+        app:popEnterAnim="@anim/enter_alpha"
+        app:popExitAnim="@anim/exit_alpha" />
+    <fragment
+        android:id="@+id/fragmentPhoto"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.photo.FragmentPhoto"
+        android:label="fragment_photo"
+        tools:layout="@layout/fragment_photo" />
+    <action
+        android:id="@+id/action_global_fragmentPhoto"
+        app:destination="@id/fragmentPhoto"
+        app:enterAnim="@anim/enter_alpha"
+        app:exitAnim="@anim/exit_alpha"
+        app:popEnterAnim="@anim/enter_alpha"
+        app:popExitAnim="@anim/exit_alpha" />
+    <fragment
+        android:id="@+id/fragmentFullScreenPhoto"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.photo.FragmentFullScreenPhoto"
+        android:label="fragment_full_screen_photo"
+        tools:layout="@layout/fragment_full_screen_photo" />
+    <action
+        android:id="@+id/action_global_fragmentFullScreenPhoto"
+        app:destination="@id/fragmentFullScreenPhoto"
+        app:enterAnim="@anim/enter_alpha"
+        app:exitAnim="@anim/exit_alpha"
+        app:popEnterAnim="@anim/enter_alpha"
+        app:popExitAnim="@anim/exit_alpha" />
+    <fragment
+        android:id="@+id/searchSettingsFragment"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.search.SearchSettingsFragment"
+        tools:layout="@layout/fragment_search_settings" >
+        <action
+            android:id="@+id/action_navigation_searchSettings_to_searchSettingsSelectFromListFragment"
+            app:destination="@id/searchSettingsSelectFromListFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_navigation_searchSettings_to_searchSettingsSelectFromListFragment2"
+            app:destination="@id/searchSettingsSelectFromListFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
+        <action
+            android:id="@+id/action_searchSettingsFragment_to_searchSettingsSelectYearFragment"
+            app:destination="@id/searchSettingsSelectYearFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_left"
+            app:popEnterAnim="@anim/enter_from_right"
+            app:popExitAnim="@anim/exit_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchSettingsSelectFromListFragment"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.search.SearchSettingsSelectFromListFragment"
+        android:label="SearchSettingsSelectFromListFragment" />
+    <fragment
+        android:id="@+id/searchSettingsSelectYearFragment"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.search.SearchSettingsSelectYearFragment"
+        android:label="SearchSettingsSelectYearFragment" />
+    <dialog
+        android:id="@+id/bottomFilmCollectionsFragment"
+        android:label="fragment_bottom_film_collections"
+        tools:layout="@layout/fragment_bottom_film_collections"
+        android:name="igor.petrov.final_android_lvl1.presentation.ui.film.bottomFilmCollections.BottomFilmCollectionsFragment"
+        />
+
+</navigation>
