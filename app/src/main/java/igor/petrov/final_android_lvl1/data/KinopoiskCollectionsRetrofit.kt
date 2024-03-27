@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 private val BASE_URL = App.applicationContext().getString(R.string.kinopoisk_collections_base_url)
 
 object KinopoiskCollectionsRetrofit {
-    private val retrofit = Retrofit.Builder()
+    val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(MoshiConverterFactory.create())
         .build()

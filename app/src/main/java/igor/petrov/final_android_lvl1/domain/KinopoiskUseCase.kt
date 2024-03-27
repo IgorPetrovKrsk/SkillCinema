@@ -217,6 +217,4 @@ class KinopoiskUseCase @Inject constructor(
     suspend fun isFilmViewed(filmId: Int):Boolean{
         return roomDBRepository.isFilmViewed(filmId,viewedCollection)
     }
-
-
 }

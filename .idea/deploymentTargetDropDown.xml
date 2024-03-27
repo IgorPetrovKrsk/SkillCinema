@@ -2,7 +2,16 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="FragmentPersonViewModelTest">
+        <State />
+      </entry>
+      <entry key="KinopoiskUseCaseTest">
+        <State />
+      </entry>
       <entry key="app">
+        <State />
+      </entry>
+      <entry key="getPerson()">
         <State />
       </entry>
     </value>

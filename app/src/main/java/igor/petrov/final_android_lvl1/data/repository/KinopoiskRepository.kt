@@ -1,6 +1,5 @@
 package igor.petrov.final_android_lvl1.data.repository
 
-import android.util.Log
 import igor.petrov.final_android_lvl1.data.KinopoiskCollectionsRetrofit
 import igor.petrov.final_android_lvl1.data.PhotoType
 import igor.petrov.final_android_lvl1.data.dto.CountryDto
@@ -50,9 +49,7 @@ class KinopoiskRepository @Inject constructor() {
     }
 
     suspend fun getPerson(personId: Int): Response<PersonDto> {
-        val result = KinopoiskCollectionsRetrofit.kinopoiskApi.getPerson(personId)
-        Log.d("Retrofit2", "getPerson: " + result)
-        return result
+        return KinopoiskCollectionsRetrofit.kinopoiskApi.getPerson(personId)
     }
 
     suspend fun getSerialSeasonsList(serialId: Int): Response<SerialSeasonsListDto> {
