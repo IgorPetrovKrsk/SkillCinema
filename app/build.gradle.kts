@@ -18,7 +18,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "igor.petrov.final_android_lvl1.HiltTestRunner"
     }
 
     buildTypes {
@@ -67,9 +67,6 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.test:core-ktx:1.5.0")
-    implementation("androidx.test.ext:junit-ktx:1.1.5")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.room:room-runtime:2.6.1")
@@ -104,6 +101,8 @@ dependencies {
     androidTestImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.8.22")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
-    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.50")
+    androidTestImplementation("io.mockk:mockk-android:1.13.10")
+    kspAndroidTest("com.google.dagger:hilt-android-compiler:2.50")
+    debugImplementation("androidx.fragment:fragment-testing:1.6.2")
 }
