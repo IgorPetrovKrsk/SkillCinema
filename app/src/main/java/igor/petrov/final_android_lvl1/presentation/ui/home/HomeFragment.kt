@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import igor.petrov.final_android_lvl1.App
 import igor.petrov.final_android_lvl1.R
 import igor.petrov.final_android_lvl1.data.FilmCollections
 import igor.petrov.final_android_lvl1.data.FilmType
@@ -66,7 +65,7 @@ class HomeFragment : Fragment() {
         homeViewModel.filmPremierAdapter = filmPremierAdapter
 
         binding.recyclerViewFilmPremier.layoutManager =
-            LinearLayoutManager(App.applicationContext(), LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewFilmPremier.adapter = filmPremierAdapter
 
         lifecycleScope.launch {
@@ -84,7 +83,7 @@ class HomeFragment : Fragment() {
 
 
         binding.recyclerViewFilmPopular.layoutManager =
-            LinearLayoutManager(App.applicationContext(), LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewFilmPopular.adapter = filmPopularAdapter
         lifecycleScope.launch {
             homeViewModel.filmPopularList.collect {
@@ -93,7 +92,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.recyclerViewFilmRandom1.layoutManager =
-            LinearLayoutManager(App.applicationContext(), LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewFilmRandom1.adapter = filmRandom1Adapter
         lifecycleScope.launch {
             homeViewModel.filmRandom1List.collect {
@@ -105,7 +104,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.recyclerViewFilmRandom2.layoutManager =
-            LinearLayoutManager(App.applicationContext(), LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewFilmRandom2.adapter = filmRandom2Adapter
         lifecycleScope.launch {
             homeViewModel.filmRandom2List.collect {
@@ -117,7 +116,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.recyclerViewFilmTop250.layoutManager =
-            LinearLayoutManager(App.applicationContext(), LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewFilmTop250.adapter = filmTop250Adapter
         lifecycleScope.launch {
             homeViewModel.filmTop250List.collect {
@@ -126,7 +125,7 @@ class HomeFragment : Fragment() {
         }
 
         binding.recyclerViewFilmSerials.layoutManager =
-            LinearLayoutManager(App.applicationContext(), LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewFilmSerials.adapter = serialAdapter
         lifecycleScope.launch {
             homeViewModel.serialList.collect {

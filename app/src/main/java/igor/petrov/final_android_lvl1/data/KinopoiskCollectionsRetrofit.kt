@@ -1,12 +1,11 @@
 package igor.petrov.final_android_lvl1.data
 
-import igor.petrov.final_android_lvl1.App
-import igor.petrov.final_android_lvl1.R
 import igor.petrov.final_android_lvl1.data.api.KinopoiskApi
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-private val BASE_URL = App.applicationContext().getString(R.string.kinopoisk_collections_base_url)
+//private val BASE_URL = App.applicationContext().getString(R.string.kinopoisk_collections_base_url)
+private val BASE_URL = "https://kinopoiskapiunofficial.tech/api/"
 
 object KinopoiskCollectionsRetrofit {
     private val retrofit = Retrofit.Builder()

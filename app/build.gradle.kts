@@ -18,7 +18,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "igor.petrov.final_android_lvl1.HiltTestRunner"
     }
 
     buildTypes {
@@ -31,7 +31,6 @@ android {
         }
     }
 
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -41,6 +40,17 @@ android {
     }
     buildFeatures {
         viewBinding = true
+    }
+    packaging {
+        resources.excludes.add("META-INF/LICENSE.md")
+        resources.excludes.add("META-INF/LICENSE-notice.md")
+    }
+    testOptions {
+        packagingOptions {
+            jniLibs {
+                useLegacyPackaging = true
+            }
+        }
     }
 }
 
@@ -56,6 +66,7 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.test.espresso:espresso-contrib:3.5.1")
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.room:room-runtime:2.6.1")
@@ -82,4 +93,8 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.50")
+    androidTestImplementation("io.mockk:mockk-android:1.13.10")
+    kspAndroidTest("com.google.dagger:hilt-android-compiler:2.50")
+    debugImplementation("androidx.fragment:fragment-testing:1.6.2")
 }
