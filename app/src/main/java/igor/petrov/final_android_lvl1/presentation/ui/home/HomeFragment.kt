@@ -37,6 +37,19 @@ class HomeFragment : Fragment() {
 
     private val binding get() = _binding!!
 
+    private var random1Country = CountryDto(null, "")
+    private var random1Genre = GenreDto(null, "")
+    private var random2Country = CountryDto(null, "")
+    private var random2Genre = GenreDto(null, "")
+    private val filmRandom1Adapter  = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
+    private val filmRandom2Adapter  = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
+    private val filmPremierAdapter  = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
+    private val filmPopularAdapter  = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
+    private val filmTop250Adapter   = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
+    private val serialAdapter       = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
+
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -47,22 +60,8 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    private var random1Country = CountryDto(null, "")
-    private var random1Genre = GenreDto(null, "")
-    private var random2Country = CountryDto(null, "")
-    private var random2Genre = GenreDto(null, "")
-    private val filmRandom1Adapter  = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
-    private val filmRandom2Adapter   = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
-    private val filmPremierAdapter   = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
-    private val filmPopularAdapter  = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
-    private val filmTop250Adapter   = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
-    private val serialAdapter       = FilmAdapter ({film: Film -> onFilmClicked(film)},{film: Film ->  homeViewModel.isFilmViewed(film)} )
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        homeViewModel.filmPremierAdapter = filmPremierAdapter
 
         binding.recyclerViewFilmPremier.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -167,7 +166,7 @@ class HomeFragment : Fragment() {
                     }
 
                     LoadingState.Loading -> {
-                        //activity?.findViewById<View>(R.id.progressBarLoading)?.visibility = View.VISIBLE
+                        activity?.findViewById<View>(R.id.progressBarLoading)?.visibility = View.VISIBLE
                     }
 
                     LoadingState.Ready -> {
@@ -186,7 +185,14 @@ class HomeFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.recyclerViewFilmPremier.adapter = null
+        binding.recyclerViewFilmPopular.adapter = null
+        binding.recyclerViewFilmRandom1.adapter = null
+        binding.recyclerViewFilmRandom2.adapter = null
+        binding.recyclerViewFilmTop250.adapter = null
+        binding.recyclerViewFilmSerials.adapter = null
         _binding = null
+
     }
 
     private fun showAllFilter(country: Country?, genre: Genre?, type: FilmType?) {
@@ -260,7 +266,7 @@ class HomeFragment : Fragment() {
                 .setTitle(resources.getString(R.string.text_error))
                 .setCancelable(false)
 
-            when ((error as KinopoiskException).code) {
+            when (error.code) {
                 401 -> {
                     materialDialog.setMessage(resources.getString(R.string.text_error_401))
                     materialDialog.setView(DialogError401WrongTokenBinding.inflate(layoutInflater, null, false).root)

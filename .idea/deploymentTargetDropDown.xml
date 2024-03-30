@@ -2,16 +2,10 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="FragmentPersonViewModelTest">
+        <State />
+      </entry>
       <entry key="app">
-        <State />
-      </entry>
-      <entry key="clickCreateNewCollection_showCollectionDialog()">
-        <State />
-      </entry>
-      <entry key="clickOnPremieresRecyclerViewItem_navigateToFilmFragment()">
-        <State />
-      </entry>
-      <entry key="clickShowAllPremieres_navigateToFragmentShowAll()">
         <State />
       </entry>
       <entry key="homeFragmentTest()">

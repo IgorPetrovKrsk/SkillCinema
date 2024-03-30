@@ -74,6 +74,7 @@
     <string name="text_error_429">Too many querries. Slow down :-)</string>
     <string name="text_error_unknown">"Sorry for technical information. :-( \n But it is needed for debug :-) \n"</string>
     <string name="text_no_films_in_collection">No films :-(</string>
+    <string name="leak_canary_test_class_name">assertk.Assert</string>
 
 
 </resources>

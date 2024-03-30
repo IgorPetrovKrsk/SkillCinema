@@ -17,7 +17,6 @@ import igor.petrov.final_android_lvl1.data.dto.GenresCountriesListDto
 import igor.petrov.final_android_lvl1.domain.KinopoiskException
 import igor.petrov.final_android_lvl1.domain.KinopoiskUseCase
 import igor.petrov.final_android_lvl1.entity.Film
-import igor.petrov.final_android_lvl1.presentation.adapters.FilmAdapter
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -30,7 +29,10 @@ import kotlin.random.Random
 class HomeViewModel @Inject constructor(private val kinopoiskUseCase: KinopoiskUseCase) :
     ViewModel() {
 
-    var filmPremierAdapter: FilmAdapter? = null  //адаптер находится во ViewModel чтобы к нему можно было образаться с 2х разных фрагментов
+    //var filmPremierAdapter: FilmAdapter? = null  //адаптер находится во ViewModel чтобы к нему можно было образаться с 2х разных фрагментов
+
+    //private val _welcomeState = MutableStateFlow<LoadingState>(LoadingState.Loading)
+    //val welcomeState = _welcomeState.asStateFlow()
 
     private val _loadingState = MutableStateFlow<LoadingState>(LoadingState.Loading)
     val loadingState = _loadingState.asStateFlow()

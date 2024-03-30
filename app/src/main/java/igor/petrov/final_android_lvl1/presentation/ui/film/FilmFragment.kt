@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import igor.petrov.final_android_lvl1.App
 import igor.petrov.final_android_lvl1.R
 import igor.petrov.final_android_lvl1.data.LoadingState
 import igor.petrov.final_android_lvl1.data.dto.collectionDto.CollectionsDBDto
@@ -110,7 +109,7 @@ class FilmFragment : Fragment() {
 
         val galleryAdapter = GalleryAdapter { photo: Photo, position: Int -> onPhotoClicked(photo, position) }
 
-        binding.recyclerViewFilmGallery.layoutManager = LinearLayoutManager(App.applicationContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerViewFilmGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewFilmGallery.adapter = galleryAdapter
 
         lifecycleScope.launch {
@@ -128,7 +127,7 @@ class FilmFragment : Fragment() {
         }
 
         val similarFilmAdapter = SimilarFilmAdapter { similarFilm: SimilarFilm -> onFilmClicked(similarFilm) }
-        binding.recyclerViewFilmSimilar.layoutManager = LinearLayoutManager(App.applicationContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerViewFilmSimilar.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewFilmSimilar.adapter = similarFilmAdapter
         lifecycleScope.launch {
             filmFragmentViewModel.similarFilmList.collect {similarFilmList ->
