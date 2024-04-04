@@ -13,3 +13,21 @@ Interactive Film Listings: Utilizing RecyclerView functionality, the app present
 Firebase Crashlytics: In addition to its core features, the SkillCinema Android application also utilizes Firebase Crashlytics for efficient crash reporting and analysis.
 
 UNIT & UI tests: The App utilizes both basic UI and UNIT tests to ensure the stability and reliability of its functionalities
+
+![Start](https://github.com/IgorPetrovKrsk/SkillCinema/assets/105622148/ae2fb15d-21db-4002-a1b7-665aa92344ad)
+
+Start screen
+
+![Search](https://github.com/IgorPetrovKrsk/SkillCinema/assets/105622148/620a060a-9eb0-4b96-a39b-67ee08e463db)
+
+Search screen
+
+![SearchFilter](https://github.com/IgorPetrovKrsk/SkillCinema/assets/105622148/675da31d-f8da-4919-8ae7-50b1dc089876)
+
+Search filter screen
+
+![Collections](https://github.com/IgorPetrovKrsk/SkillCinema/assets/105622148/c513b8e9-0679-44d0-abbf-3718dcacfc02)
+
+Collections screen
+
+![Collections_2](https://github.com/IgorPetrovKrsk/SkillCinema/assets/105622148/1ffbcaba-1c90-4e11-9450-e6b073644361)
